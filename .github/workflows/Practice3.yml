@@ -1,0 +1,10 @@
+name : Practice-Exercise-workflow-3 (Issue)
+on: 
+    issues
+jobs:
+    Output:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output Display The Issue
+              run: echo "${{ toJson(github.event) }}"
+   
