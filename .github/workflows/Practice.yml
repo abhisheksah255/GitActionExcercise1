@@ -4,6 +4,7 @@ on:
 
 jobs:
     Deploy:
+        needs: [Test,Lint]
         runs-on: ubuntu-latest
         steps:
             - name: Get code
@@ -19,6 +20,7 @@ jobs:
             - name: Deploy project
               run: echo "Deploying..."
     Test:
+        needs: Lint
         runs-on: ubuntu-latest
         steps:
             - name: Get code
